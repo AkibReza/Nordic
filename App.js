@@ -1,19 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
 
-export default function App() {
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import {
+  NavigationContainer,
+  createAppContainer,
+} from "@react-navigation/native";
+
+import HomeScreen from "./src/screens/HomeScreen";
+import ValuesScreen from "./src/screens/ValuesScreen";
+import ServicesScreen from "./src/screens/ServicesScreen";
+import PortfolioScreen from "./src/screens/PortfolioScreen";
+import AboutScreen from "./src/screens/AboutScreen";
+import ContactScreen from "./src/screens/ContactScreen";
+
+const { Navigator, Screen } = createDrawerNavigator();
+
+const App = function () {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Navigator initialRouteName="Home">
+        <Screen name="Home" component={HomeScreen} />
+        <Screen name="Our Values" component={ValuesScreen} />
+        <Screen name="Services" component={ServicesScreen} />
+        <Screen name="Portfolio" component={PortfolioScreen} />
+        <Screen name="About" component={AboutScreen} />
+        <Screen name="Contact" component={ContactScreen} />
+      </Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
