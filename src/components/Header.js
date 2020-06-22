@@ -1,22 +1,31 @@
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Header, Left, Icon, Right, Button, Body } from "native-base";
 
 const Headers = ({ navigation }) => {
-  return <></>;
+  return (
+    <Header style={styles.header}>
+      <Left>
+        <Button transparent onPress={() => navigation.openDrawer()}>
+          <Icon name="menu" />
+        </Button>
+      </Left>
+      <Body>
+        <Image source={require("../vendor/nordic.png")} style={styles.icon} />
+      </Body>
+      <Right />
+    </Header>
+  );
 };
 
 const styles = StyleSheet.create({
   header: {
-    flex: 1,
-    width: 280,
-    height: 280,
-    resizeMode: "contain",
-    marginBottom: 15,
+    backgroundColor: "#333",
   },
   icon: {
-    color: "#fff",
+    flex: 1,
+    width: 200,
+    resizeMode: "contain",
   },
 });
 
