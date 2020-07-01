@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
-import { Container, Footer, Content, Left, Text, Right } from "native-base";
+import { Footer, Text } from "native-base";
 
 const Footers = () => {
   return (
@@ -22,7 +22,7 @@ const Footers = () => {
 const styles = StyleSheet.create({
   footer: {
     backgroundColor: "#1f1f1f",
-    height: 100,
+    height: 120,
   },
   icon: {
     flex: 1,
